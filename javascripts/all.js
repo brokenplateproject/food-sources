@@ -1,6 +1,6 @@
 var usersState, usersIncome = 0, usersZip, stateData, adultHouse, childHouse, useState, useCharity, useMarket, useAlternative, sources = [], services = [], monthlyBudget;
 
-$.getJSON( "http://arjunasoriano.net/brokenplate/javascripts/statesnokey.json", function( data ) {
+$.getJSON( "statesnokey.json", function( data ) {
   states = data;
  });
 
