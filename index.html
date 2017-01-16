@@ -1,0 +1,522 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Broken Plate</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport">
+    <meta content="" property="description">
+    <meta content="" property="og:title">
+    <meta content="article" property="og:type">
+    <meta content="" property="og:site_name">
+    <meta content="" property="og:url">
+    <meta content="" property="og:description">
+    <meta content="" property="og:image">
+    <meta content="" property="article:publisher">
+    <meta content="summary" name="twitter:card">
+    <meta content="" name="twitter:site">
+    <meta content="" name="twitter:creator">
+    <meta content="" name="twitter:title">
+    <meta content="" name="twitter:description">
+    <meta content="" name="twitter:image">
+    <link href="favicon.png" rel="icon" type="image/png">
+
+    <link href="https://fonts.googleapis.com/css?family=PT+Serif|Archivo+Narrow:700" rel="stylesheet">
+
+    <link href="stylesheets/site.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="javascripts/all.js"></script>
+  </head>
+
+  <body class="index">
+    <header class="fixed-header"></header>
+  <div class="wrapper">
+    <div id="intro">
+      <div class="demographics">
+        <div class="intro">
+          <div class="dek">
+            <p>The Broken Plate project is examining the strategies that communities across the U.S. use to access food. Your survey answers will directly contribute to the study and will enable you to compare your situation to that of others in your larger geographic area.</p>
+            <p>Enter your zip code and income to get started.</p>
+          </div>
+          <div id="zipbox">
+            <div class="input-error" id="incomeerror">
+              Please enter a valid income
+            </div><input id="income" placeholder="Income" type="text">
+            <div id="income-result">
+              Income: $<span id="income-value"></span>
+            </div>
+            <div class="input-error" id="ziperror">
+              Please enter a valid zipcode
+            </div><input id="zipcode" placeholder="ZIP Code" type="text">
+            <div class="locale">
+              City: <span id="citybox"></span>
+            </div>
+            <div class="locale">
+              State: <span id="statebox"></span>
+            </div>
+            <div class="next-button" id="submit-zip">
+              <svg height="20" style="width:30px;height:20px;margin:0 0 -.25em -.5em;" viewbox="0 0 55.8 24" width="30" xmlns="http://www.w3.org/2000/svg">
+              <path d="M.3.5l27.8 23M55.4.5l-27.8 23" fill="none" stroke="#555655" stroke-miterlimit="10"></path></svg> <span>Begin</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="intro-answer">
+      <div class="state-income">
+        Your income of <strong>$<span class="userIncome">0</span></strong> is
+        <div class="highlighted-data">
+          $<span id="income-difference"></span> <span id="income-relative">ABOVE</span>
+        </div>the annual median of <strong>$<span id="stateMedian"></span></strong><sup>*</sup> in <strong class="userState">Colorado</strong>.
+      </div>
+      <div class="state-income">
+        At least once over a twelve-month period nearly <strong><span id="food-hardship"></span>%</strong><sup>**</sup> of people in your state did not have enough resources to cover their food costs.
+        <div class="data-source">
+          Source: <a href="http://www.census.gov/programs-surveys/cps.html" target="_blank"><sup>*</sup>US Census Bureau Current Population Survey</a><br>
+          <a href="http://facinghunger.org/in-the-news/call-to-action/frac-how-hungry-is-america" target="_blank"><sup>**</sup>FRAC: How Hungry is America</a>
+        </div>
+        <div class="next-button" data-question="0">
+          next
+        </div>
+      </div>
+    </div>
+    <div id="container">
+      <ul class="questions">
+        <li class="question household-question" id="question0" rel="0">
+          <div class="holderr">
+            <div class="question-body">
+              <h3>Who is in your household?</h3>
+              <h4>Adults</h4> <input id="household-adult" min="0" step="1" type="number" value="0">
+              <h4>Children</h4> <input id="household-child" min="0" step="1" type="number" value="0">
+              <div class="answer">
+                Continue
+              </div>
+            </div>
+            <div class="answer-popup">
+              <div class="state-income">
+                Your household of <strong><span class="number-household">0</span></strong> is <strong id="household-relative"></strong> the median of <strong>2.53</strong> people per household in the United States.<br>
+                <div class="data-source">
+                  Source: <a href="https://www.census.gov/hhes/families/files/hh4.csv" target="_blank">The United States Census</a>
+                </div>
+                <div class="next-question" data-question="household-question" data-next-question="source-question">
+                  next
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+        <!-- BROKEN PLATE FOUR SOURCES QUESTION -->
+        <li class="question source-question" id="question1" rel="1">
+          <div class="holderr">
+            <div class="question-body">
+              <h3>Where do you source food from?</h3>
+              <h6>Choose all that apply</h6>
+              <ul class="answers">
+                <li class="markets-answer" data-answer="usesMarkets" data-section="marketSection" rel="3">Markets (Food Banks, Pantries, Soup Kitchens)</li>
+                <li class="state-answer" data-answer="usesState" data-answer-weight="3" rel="1" data-section="stateSection">State (Snap, WIC, School Lunch, TEFAP)</li>
+                <li class="charities-answer" data-answer="usesCharity" data-answer-weight="3" rel="2" data-section="charitySection">Charities (Food Banks, Pantries, Soup Kitchens)</li>
+                <li class="alternative-answer" data-answer="usesAlternative" data-answer-weight="3" rel="4" data-section="alternativeSection">Alternative (Food Banks, Pantries, Soup Kitchens)</li>
+              </ul>
+              <div class="source-submit">
+                Continue
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+      <ul class="questions marketSection">
+        <!-- MARKET SECTION -->
+        <li class="question monthly-budget marketSection" id="question6" rel="6">
+          <div class="holderr">
+            <div class="question-body">
+              <h3>How much do you spend per month on food?</h3>
+              <h4>$</h4><input class="dollar" type="number" value="0">
+              <div class="next-question" data-question="monthly-budget" data-next-question="store-type">
+                next
+              </div>
+            </div>
+        </li>
+        <li class="question store-type" id="question5" rel="5" style="">
+          <div class="holderr">
+            <div class="question-body">
+              <h3>Where do you source food from most often?</h3>
+              <h6>Choose all that apply</h6>
+              <ul class="answers">
+                <li class="big-box" data-answer="2" data-answer-weight="3" rel="1">Big Box (Walmart, Target, Sam's Club)</li>
+                <li class="small-box" data-answer="2" data-answer-weight="3" rel="2">Small Box (CVS, Walgreens, Dollar General)</li>
+                <li class="grocery" data-answer="2" data-answer-weight="3" rel="3">Grocery Store (Kroger, Whole Foods, Piggly Wiggly, Save-A-Lot)</li>
+                <li class="convenience" data-answer="2" data-answer-weight="3" rel="4">Convenience Store (Gas station, BFS, 7-11)</li>
+                <li class="not-selected" data-answer="2" data-answer-weight="3" rel="5">Farmers Market/Cooperative/Local Food Store</li>
+                <li class="not-selected" data-answer="2" data-answer-weight="3" rel="5">Restaurants/Fast Food/Coffee Shops</li>
+              </ul>
+              <div class="next-question" data-question="store-type" data-questions="10" data-next-question="frequency-question">
+                Continue
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="question frequency-question" id="question3" rel="3">
+          <div class="holderr">
+            <div class="question-body">
+              <h3>How many times do you go shopping for food in a week?</h3><input type="number" value="0">
+              <div class="next-question" data-question="frequency-question" data-questions="10" data-next-question="distance-question">
+                Continue
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="question distance-question" id="question4" rel="4">
+          <div class="holderr">
+            <div class="question-body">
+              <h3>On average, how far do you travel to get to the store?</h3><input type="number" value="0">
+              <div class="next-question" data-question="distance-question" data-questions="transportation-question" data-next-question="transportation-question">
+                Continue
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <!-- NEEDS TO ADD DATA_NEXT_QUESTION ATTR of source of .final -->
+        <li class="question transportation-question final" id="question5" rel="5" style="">
+          <div class="holderr">
+            <div class="question-body">
+              <h3>How do you get to the store?</h3>
+              <h6>Choose all that apply</h6>
+              <ul class="answers">
+                <li class="not-selected" data-answer="2" data-answer-weight="3" rel="1">Bus</li>
+                <li class="not-selected" data-answer="2" data-answer-weight="3" rel="2">Walk</li>
+                <li class="not-selected" data-answer="2" data-answer-weight="3" rel="3">Taxi</li>
+                <li class="not-selected" data-answer="2" data-answer-weight="3" rel="4">Personal Vehicle</li>
+                <li class="not-selected" data-answer="2" data-answer-weight="3" rel="5">Friend's Vehicle</li>
+              </ul>
+              <div class="next-question" data-question="transportation-question" data-questions="10" data-next-question="results">
+                Continue
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+      <ul class="questions stateSection">
+        <!-- STATE SECTION -->
+        <li class="question snap-question stateSection" id="question6" rel="6">
+          <div class="holderr">
+            <div class="question-body">
+              <h3>Do you recieve SNAP? If so, how much do you recieve monthly?</h3>
+              <h4>$</h4><input type="number" value="0">
+              <div class="answer">
+                Continue
+              </div>
+            </div>
+            <div class="answer-popup">
+              <div class="state-income">
+                In <strong><span class="userState">0</span></strong>, around <strong class="snap-data"></strong> of every <strong>100</strong> people receive SNAP benefits.<br>
+                <div class="data-source">
+                  Source: <a href="https://www.fns.usda.gov/pd/supplemental-nutrition-assistance-program-snap" target="_blank">USDA Food and Nutrition Service</a>
+                </div>
+                <div class="next-question" data-question="snap-question" data-next-question="wic-question">Next
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="question wic-question" id="question7" rel="7" style="">
+          <div class="holderr">
+            <div class="question-body">
+              <h3>Do you receive WIC</h3>
+              <ul class="answers">
+                <li class="not-selected" data-answer="2" data-answer-weight="3" rel="1">Yes</li>
+                <li class="not-selected" data-answer="2" data-answer-weight="3" rel="2">No</li>
+              </ul>
+              <div class="answer">
+                Continue
+              </div>
+            </div>
+            <div class="answer-popup">
+              <div class="state-income">
+                In <strong><span class="userState">0</span></strong>, around <strong class="wic-data"></strong> of every <strong>100</strong> people receive WIC benefits.<br>
+                <div class="data-source">
+                  Source: <a href="http://www.fns.usda.gov/pd/wic-program" target="_blank">USDA Food and Nutrition Service</a>
+                </div>
+                <div class="next-question" data-question="wic-question" data-next-question="lunch-question">
+                  next
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="question lunch-question final" id="question8" rel="8" style="">
+          <div class="holderr">
+            <div class="question-body">
+              <h3>Do your children recieve free or reduced cost school meals?</h3>
+              <ul class="answers">
+                <li class="not-selected" data-answer="2" data-answer-weight="3" rel="1">Yes</li>
+                <li class="not-selected" data-answer="2" data-answer-weight="3" rel="2">No</li>
+              </ul>
+              <div class="answer">
+                Continue
+              </div>
+            </div>
+            <div class="answer-popup">
+              <div class="state-income">
+                In <strong><span class="userState">0</span></strong>, <strong class="lunch-data"></strong> children received school lunches and <strong class="breakfast-data"></strong> received breakfasts.<br>
+                <div class="data-source">
+                  Source: <a href="https://www.fns.usda.gov/nslp/national-school-lunch-program-nslp" target="_blank">USDA Food and Nutrition Service</a>
+                </div>
+                <div class="next-question" data-question="lunch-question" data-next-question="results">
+                  next
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+      <ul class="questions charitySection">
+        <li class="question services-question charitySection" id="question9" rel="9" style="">
+          <div class="holderr">
+            <div class="question-body">
+              <h3>Have you ever used any of the following services?</h3>
+              <h6>Choose all that apply</h6>
+              <ul class="answers">
+                <li class="not-selected" data-answer="2" data-section="pantry" rel="1">Food Pantry</li>
+                <li class="not-selected" data-answer="2" data-section="kitchen" rel="2">Soup Kitchen</li>
+                <li class="not-selected" data-answer="2" data-section="delivery" rel="3">Meal Delivery Program</li>
+                <li class="not-selected" data-answer="2" data-section="backpack" rel="4">School Backpack Program</li>
+              </ul>
+              <div class="source-submit">
+                Continue
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="question services-frequency" id="question6" rel="6">
+          <div class="holderr">
+            <div class="question-body">
+              <h2>How many times have you used these services in the past 90 days?</h2>
+              <ul>
+                <li class="pantry">
+                  <strong>Food Pantry: </strong>
+                  <input type="number" value="0">
+                </li>
+                <li class="kitchen">
+                  <strong>Soup Kitchen: </strong>
+                  <input type="number" value="0">
+                </li>
+                <li class="delivery">
+                  <strong>Meal delivery program: </strong>
+                  <input type="number" value="0">
+                </li>
+                <li class="backpack">
+                  <strong>School backpack program: </strong>
+                  <input type="number" value="0">
+                </li>
+              </ul>
+              <div class="answer">
+                Continue
+              </div>
+            </div>
+            <div class="answer-popup">
+              <p class="answer-copy"><strong class="insecure">0</strong> people in <strong class="userState">Colorado</strong> are food insecure.</p>
+              <div class="next-question" data-question="services-frequency" data-next-question="results">
+                next
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+      <ul class="questions alternativeSection">
+        <li class="question services-question alternativeSection" id="question9" rel="9" style="">
+          <div class="holderr">
+            <div class="question-body">
+              <h3>How else do you access food?</h3>
+              <h6>Choose all that apply</h6>
+              <ul class="answers">
+                <li class="not-selected" data-answer="2" data-section="gardening" rel="1">Gardening</li>
+                <li class="not-selected" data-answer="2" data-section="hunting" rel="2">Hunting</li>
+                <li class="not-selected" data-answer="2" data-section="fishing" rel="3">Fishing</li>
+              </ul>
+              <div class="source-submit">
+                Continue
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+      <div class="results" style="display: none">
+        <div class="results-questions">
+          <h6>What is the biggest thing that keeps you from accessing food?</h6>
+          <textarea class="access-issues"></textarea>
+          <h6>Can we contact you at a later date to ask you more about your food sourcing strategy?</h6>
+          <input type="text" placeholder="email" class="email">
+          <div class="source-submit">Thank You</div>
+        </div>
+        <div class="results-wrapper">
+          <img src="images/results.jpg">
+          <div class="state-select-wrapper">
+            <h4 class="state-select-label">Browse your state data</h4>
+            <div>
+              <div class="styled-select">
+                <select id="state-select">
+                  <option value="Alabama">
+                    Alabama
+                  </option>
+                  <option value="Alaska">
+                    Alaska
+                  </option>
+                  <option value="Arizona">
+                    Arizona
+                  </option>
+                  <option value="Arkansas">
+                    Arkansas
+                  </option>
+                  <option value="California">
+                    California
+                  </option>
+                  <option value="Colorado">
+                    Colorado
+                  </option>
+                  <option value="Connecticut">
+                    Connecticut
+                  </option>
+                  <option value="Delaware">
+                    Delaware
+                  </option>
+                  <option value="District Of Columbia">
+                    District Of Columbia
+                  </option>
+                  <option value="Florida">
+                    Florida
+                  </option>
+                  <option value="Georgia">
+                    Georgia
+                  </option>
+                  <option value="Hawaii">
+                    Hawaii
+                  </option>
+                  <option value="Idaho">
+                    Idaho
+                  </option>
+                  <option value="Illinois">
+                    Illinois
+                  </option>
+                  <option value="Indiana">
+                    Indiana
+                  </option>
+                  <option value="Iowa">
+                    Iowa
+                  </option>
+                  <option value="Kansas">
+                    Kansas
+                  </option>
+                  <option value="Kentucky">
+                    Kentucky
+                  </option>
+                  <option value="Louisiana">
+                    Louisiana
+                  </option>
+                  <option value="Maine">
+                    Maine
+                  </option>
+                  <option value="Maryland">
+                    Maryland
+                  </option>
+                  <option value="Massachusetts">
+                    Massachusetts
+                  </option>
+                  <option value="Michigan">
+                    Michigan
+                  </option>
+                  <option value="Minnesota">
+                    Minnesota
+                  </option>
+                  <option value="Mississippi">
+                    Mississippi
+                  </option>
+                  <option value="Missouri">
+                    Missouri
+                  </option>
+                  <option value="Montana">
+                    Montana
+                  </option>
+                  <option value="Nebraska">
+                    Nebraska
+                  </option>
+                  <option value="Nevada">
+                    Nevada
+                  </option>
+                  <option value="New Hampshire">
+                    New Hampshire
+                  </option>
+                  <option value="New Jersey">
+                    New Jersey
+                  </option>
+                  <option value="New Mexico">
+                    New Mexico
+                  </option>
+                  <option value="New York">
+                    New York
+                  </option>
+                  <option value="North Carolina">
+                    North Carolina
+                  </option>
+                  <option value="North Dakota">
+                    North Dakota
+                  </option>
+                  <option value="Ohio">
+                    Ohio
+                  </option>
+                  <option value="Oklahoma">
+                    Oklahoma
+                  </option>
+                  <option value="Oregon">
+                    Oregon
+                  </option>
+                  <option value="Pennsylvania">
+                    Pennsylvania
+                  </option>
+                  <option value="Rhode Island">
+                    Rhode Island
+                  </option>
+                  <option value="South Carolina">
+                    South Carolina
+                  </option>
+                  <option value="South Dakota">
+                    South Dakota
+                  </option>
+                  <option value="Tennessee">
+                    Tennessee
+                  </option>
+                  <option value="Texas">
+                    Texas
+                  </option>
+                  <option value="Utah">
+                    Utah
+                  </option>
+                  <option value="Vermont">
+                    Vermont
+                  </option>
+                  <option value="Virginia">
+                    Virginia
+                  </option>
+                  <option value="Washington">
+                    Washington
+                  </option>
+                  <option value="West Virginia">
+                    West Virginia
+                  </option>
+                  <option value="Wisconsin">
+                    Wisconsin
+                  </option>
+                  <option value="Wyoming">
+                    Wyoming
+                  </option>
+                </select>
+              </div><button id="go" name="button" type="button">View</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer></footer>
+
+  </body>
+</html>
