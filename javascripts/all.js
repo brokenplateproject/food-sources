@@ -1,6 +1,6 @@
 var usersState, usersIncome = 0, usersZip, stateData, adultHouse, childHouse, useState, useCharity, useMarket, useAlternative, sources = [], services = [], monthlyBudget;
 
-$.getJSON( "statesnokey.json", function( data ) {
+$.getJSON( "javascripts/statesnokey.json", function( data ) {
   states = data;
  });
 
