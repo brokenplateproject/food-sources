@@ -7,7 +7,7 @@ var usersState, usersIncome = 0, usersZip, stateData, adultHouse, childHouse, us
 
 // states key:[ state,  name,  median,  icon,  snap,  wic, insecure,  hardship,  lunch, breakfast]
 
-$.getJSON( "/javascripts/statesnokey.json", function( data ) {
+$.getJSON( "/statesnokey.json", function( data ) {
   states = data;
  });
 
