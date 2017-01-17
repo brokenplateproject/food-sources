@@ -1,15 +1,15 @@
 var usersState, usersIncome = 0, usersZip, stateData, adultHouse, childHouse, useState, useCharity, useMarket, useAlternative, sources = [], services = [], monthlyBudget;
 
-$.getJSON( "statesnokey.json", function( data ) {
-  states = data;
- });
+// $.getJSON( "javascripts/statesnokey.json", function( data ) {
+//   states = data;
+//  });
 
 
 // states key:[ state,  name,  median,  icon,  snap,  wic, insecure,  hardship,  lunch, breakfast]
 
-// $.getJSON( "/javascripts/statesnokey.json", function( data ) {
-//   states = data;
-//  });
+$.getJSON( "/javascripts/statesnokey.json", function( data ) {
+  states = data;
+ });
 
 $(document).ready(function(){
   // Null out value if user clicks on input
