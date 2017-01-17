@@ -145,7 +145,7 @@ $(document).ready(function(){
     // Make HTTP Request
     if ( usersState == null ) {
       $.ajax({
-        url: "http://api.zippopotam.us/us/" + zip_in.val(),
+        url: "https://api.zippopotam.us/us/" + zip_in.val(),
         cache: false,
         dataType: "json",
         type: "GET",
