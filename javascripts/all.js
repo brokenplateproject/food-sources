@@ -4,6 +4,7 @@ $.getJSON( "statesnokey.json", function( data ) {
   states = data;
  });
 
+
 // states key:[ state,  name,  median,  icon,  snap,  wic, insecure,  hardship,  lunch, breakfast]
 
 // $.getJSON( "/javascripts/statesnokey.json", function( data ) {
