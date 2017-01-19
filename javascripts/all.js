@@ -1,15 +1,14 @@
-var usersState, usersIncome = 0, usersZip, stateData, adultHouse, childHouse, useState, useCharity, useMarket, useAlternative, sources = [], services = [], monthlyBudget;
-
-// $.getJSON( "javascripts/statesnokey.json", function( data ) {
-//   states = data;
-//  });
-
+var usersState, usersIncome = 0, usersZip, stateData, adultHouse, childHouse, useState, useCharity, useMarket, useAlternative, sources = [], services = [], alternative = [], monthlyBudget;
 
 // states key:[ state,  name,  median,  icon,  snap,  wic, insecure,  hardship,  lunch, breakfast]
 
 $.getJSON( "/food-sources/javascripts/statesnokey.json", function( data ) {
   states = data;
  });
+
+// $.getJSON( "javascripts/statesnokey.json", function( data ) {
+//   states = data;
+//  });
 
 $(document).ready(function(){
   // Null out value if user clicks on input
@@ -18,7 +17,7 @@ $(document).ready(function(){
   })
 
   // HIDE SOME ELEMENTS
-  $(".question, #container, .locale, #ziperror, #incomeerror, #income-result, .answer-popup, .intro-answer, .services-frequency li, .results-wrapper").hide();
+  $(".question, #container, .locale, #ziperror, #householderror, #incomeerror, #income-result, .answer-popup, .intro-answer, .results-wrapper, .person, #gform, .input-error, .serviceserror").hide();
 
   // MULTIPLE CHOICE SELECT ALL THAT APPLY
   $(".questions").on('click', '.answers li', function(){
@@ -64,48 +63,74 @@ $(document).ready(function(){
     $('.household-question').slideDown();
   });
 
-  $(".household-question").on("click touch", ".answer", function(){
+  $(".household-question").on("click touch", ".next-button", function(){
     adultHouse = parseInt($('#household-adult').val());
     childHouse = parseInt($('#household-child').val());
     var household = adultHouse + childHouse;
 
-    if (household < 3) {
-      $('#household-relative').append('below');
+    if (household == 0) {
+      $('#householderror').slideDown();
     } else {
-      $('#household-relative').append('above');
+      closeHousehold( adultHouse, childHouse );
     }
-    $('.number-household').text(household);
   });
+
+  function closeHousehold( theseAdults, theseKids ) {
+    $('.household-question .question-body').slideUp();
+    $('.household-question .answer-popup').slideDown();
+    $('#adults').val(theseAdults);
+    $('#children').val(theseKids);
+  }
 
   // SOURCE QUESTION. Set source array and then set the data-next-section buttons to the next section. have all next-section buttons set to email at first.
 
   $('.source-question').on("click touch", ".source-submit", function() {
     var numSelected = $('.source-question .selected').length;
-    $( ".source-question .selected" ).each(function( index ) {
-      var thisSection = $(this).attr('data-section')
-      sources.push(thisSection);
-    });
+    if (numSelected > 0 ) {
+      $( ".source-question .selected" ).each(function( index ) {
+        var thisSection = $(this).attr('data-section')
+        sources.push(thisSection);
+      });
 
-    $.each( sources, function (index, value) {
-      if ( index < numSelected ) {
-        $('.'+sources[index] + ' .final .next-question').attr('data-next-question', sources[index+1]);
-      }
-    });
+      $.each( sources, function (index, value) {
+        if ( index < numSelected ) {
+          $('.'+sources[index] + ' .final .next-question').attr('data-next-question', sources[index+1]);
+        }
+      });
 
-    $('.source-question').slideUp();
-    $('.'+sources[0]).slideDown();
+      $('.source-question').slideUp();
+      $('.'+sources[0]).slideDown();
+    } else {
+      $('#sourceerror').slideDown();
+    }
   });
 
-  $('.services-question').on("click touch", ".source-submit", function() {
+  $('.charitySection').on("click touch", ".source-submit", function() {
     var numSelected = $('.services-question .selected').length;
-    $( ".services-question .selected" ).each(function( index ) {
+    if ( numSelected > 0 ) {
+      $( ".charitySection .selected" ).each(function( index ) {
+        var thisSection = $(this).attr('data-section')
+        services.push(thisSection);
+        $("."+thisSection).show();
+      });
+
+      $('.services-question').slideUp();
+      $('.services-frequency').slideDown();
+    } else {
+      $('.charitySection .serviceserror').slideDown();
+    }
+  });
+
+  $('.alternativeSection').on("click touch", ".source-submit", function() {
+    var numSelected = $('.services-question .selected').length;
+    $( ".alternativeSection .selected" ).each(function( index ) {
       var thisSection = $(this).attr('data-section')
-      services.push(thisSection);
+      alternative.push(thisSection);
       $("."+thisSection).show();
     });
 
-    $('.services-question').slideUp();
-    $('.services-frequency').slideDown();
+    $('.alternativeSection .services-question').slideUp();
+    $('.results').slideDown();
   });
 
   $("#zipbox input").keyup(function(event){
@@ -118,12 +143,31 @@ $(document).ready(function(){
 
   $('.monthly-budget').on("click touch", ".answer", function() {
     var thisBudget = $(this).siblings('.dollars').val();
-    if ( thisBudget === null) {
+    if ( thisBudget === 0) {
 
     } else {
       monthlyBudget = thisBudget;
+      $('#budget').val(thisBudget);
     }
   })
+
+  $('.snap-question').on("click touch", ".answer", function() {
+    $( ".snap-question .person, .snap-question .answer" ).each(function( index ) {
+      if ( index < stateData[4] ) {
+        $(this).addClass('recipient');
+      }
+      $(this).delay(20 * index).fadeIn();
+    });
+  });
+
+  $('.wic-question').on("click touch", ".answer", function() {
+    $( ".wic-question .person, .wic-answer .person" ).each(function( index ) {
+      if ( index < stateData[5] ) {
+        $(this).addClass('recipient');
+      }
+      $(this).delay(20 * index).fadeIn();
+    });
+  });
 
   // Results
   $('.results').on("click touch", '.source-submit', function() {
@@ -139,7 +183,7 @@ $(document).ready(function(){
   }
 
   function checkZip(){
-    var zip_in = $('#zipcode');
+    var zip_in = $('#zipcodeui');
     var zip_box = $('#zipbox');
 
     // Make HTTP Request
@@ -151,7 +195,7 @@ $(document).ready(function(){
         type: "GET",
         success: function(result, success) {
           // Make the city and state boxes visible
-          $('#zipcode').slideUp();
+          $('#zipcodeui').slideUp();
           $('.locale').slideDown();
 
           // US Zip Code Records Officially Map to only 1 Primary Location
@@ -160,6 +204,8 @@ $(document).ready(function(){
           $("#statebox").append(places['state']);
           usersState = (places['state']).split(' ').join('_').toLowerCase();
           usersZip = zip_in.val();
+          $('#zipcode').val(usersZip);
+          $('#state').val(places['state']);
           // stateData = states[usersState];
           assignStateData(usersState);
           zip_box.addClass('success').removeClass('error');
@@ -175,7 +221,7 @@ $(document).ready(function(){
   };
 
   function assignStateData( stata ) {
-    for (i = 0; i < states.length; i++) { 
+    for (i = 0; i < states.length; i++) {
       if ( states[i][0] === stata ) {
         stateData = states[i];
       }
@@ -183,14 +229,15 @@ $(document).ready(function(){
   }
 
   function checkIncome() {
-    var income_in = $('#income').val().replace(/\D+/g, '');
+    var income_in = $('#incomeui').val().replace(/\D+/g, '');
     if ( usersIncome === 0 ) {
-      if ( $('#income').val() == "" ) {
+      if ( $('#incomeui').val() == "" ) {
         $('#incomeerror').slideDown();
       } else {
         usersIncome = income_in;
-        $('#income').slideUp();
+        $('#incomeui').slideUp();
         $('#income-result').slideDown();
+        $('#income').val(income_in);
         $('#income-value').countTo({
           from: 0,
           to: income_in,
@@ -223,11 +270,11 @@ $(document).ready(function(){
       $('.lunch-data').text(stateData[8]);
       $('.breakfast-data').text(stateData[9]);
       if (stateData[2] > usersIncome) {
-        $('#income-relative').text("BELOW");
+        $('.income-relative').text("BELOW");
       }
-      $('#stateMedian').append(commaSeparateNumber(stateData[2]));
-      $('#food-hardship').append(stateData[7]);
-      $('#income-difference').countTo({
+      $('.stateMedian').append(commaSeparateNumber(stateData[2]));
+      $('.food-hardship').append(stateData[7]);
+      $('.income-difference').countTo({
         from: 0,
         to: difference,
         speed: 2000,
