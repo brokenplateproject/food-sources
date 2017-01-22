@@ -2,7 +2,7 @@ var usersState, usersIncome = 0, usersZip, stateData, adultHouse = 0, childHouse
 
 // states key:[ state,  name,  median,  icon,  snap,  wic, insecure,  hardship,  lunch, breakfast]
 
-$.getJSON( "/food-sources/javascripts/statesnokey.json", function( data ) {
+$.getJSON( "/javascripts/statesnokey.json", function( data ) {
   states = data;
  });
 
