@@ -1,4 +1,4 @@
-var usersState, usersIncome = 0, usersZip, stateData, adultHouse, childHouse, useState, useCharity, useMarket, useAlternative, sources = [], services = [], alternative = [], monthlyBudget;
+var usersState, usersIncome = 0, usersZip, stateData, adultHouse = 0, childHouse = 0, useState, useCharity, useMarket, useAlternative, sources = [], services = [], alternative = [], monthlyBudget;
 
 // states key:[ state,  name,  median,  icon,  snap,  wic, insecure,  hardship,  lunch, breakfast]
 
@@ -17,7 +17,7 @@ $(document).ready(function(){
   })
 
   // HIDE SOME ELEMENTS
-  $(".question, #container, .locale, #ziperror, #householderror, #incomeerror, #income-result, .answer-popup, .intro-answer, .results-wrapper, .person, #gform, .input-error, .serviceserror").hide();
+  $("#gform input, .question, #container, .locale, #ziperror, #householderror, #incomeerror, #income-result, .answer-popup, .intro-answer, .results-wrapper, .person, .input-error,.services-frequency li, .serviceserror").hide();
 
   // MULTIPLE CHOICE SELECT ALL THAT APPLY
   $(".questions").on('click', '.answers li', function(){
@@ -43,6 +43,10 @@ $(document).ready(function(){
 
   $(".question").on("click touch", ".next-question", function(){
     var current_question = $(this).attr("data-question"), next_question = $(this).attr("data-next-question");
+    var current_form_input = $(this).attr("data-input");
+    if (current_form_input != null ) {
+      $('#'+current_form_input).val($('.'+current_form_input).val());
+    }
     $("."+current_question).hide();
     $("."+next_question).fadeIn(100);
   });
@@ -94,7 +98,7 @@ $(document).ready(function(){
 
       $.each( sources, function (index, value) {
         if ( index < numSelected ) {
-          $('.'+sources[index] + ' .final .next-question').attr('data-next-question', sources[index+1]);
+          $('.'+sources[index] + ' .final').attr('data-next-question', sources[index+1]);
         }
       });
 
@@ -105,10 +109,36 @@ $(document).ready(function(){
     }
   });
 
+  $('.store-type').on("click touch", ".source-submit", function() {
+    if ($('.store-type .selected').length === 0) {
+      $('.store-type .input-error').slideDown();
+    } else {
+      $('.store-type .selected').each(function(index){
+        var thisFormInput = $(this).attr('data-input');
+        $('#'+thisFormInput).val(true);
+      });
+      $('.store-type').slideUp();
+      $('.'+$(this).attr('data-next-question')).slideDown();
+    }
+  });
+
+  $('.transportation-question').on("click touch", ".source-submit", function() {
+    if ($('.transportation-question .selected').length === 0) {
+      $('.transportation-question .input-error').slideDown();
+    } else {
+      $('.transportation-question .selected').each(function(index){
+        var thisFormInput = $(this).attr('data-input');
+        $('#'+thisFormInput).val(true);
+      });
+      $('.transportation-question').slideUp();
+      $('.'+$(this).attr('data-next-question')).slideDown();
+    }
+  });
+
   $('.charitySection').on("click touch", ".source-submit", function() {
     var numSelected = $('.services-question .selected').length;
     if ( numSelected > 0 ) {
-      $( ".charitySection .selected" ).each(function( index ) {
+      $( ".services-question .selected" ).each(function( index ) {
         var thisSection = $(this).attr('data-section')
         services.push(thisSection);
         $("."+thisSection).show();
@@ -122,15 +152,24 @@ $(document).ready(function(){
   });
 
   $('.alternativeSection').on("click touch", ".source-submit", function() {
-    var numSelected = $('.services-question .selected').length;
+    var numSelected = $('.alternativeSection .selected').length;
     $( ".alternativeSection .selected" ).each(function( index ) {
       var thisSection = $(this).attr('data-section')
-      alternative.push(thisSection);
-      $("."+thisSection).show();
+      $('#'+thisSection).val('true');
     });
 
-    $('.alternativeSection .services-question').slideUp();
+    $('.alternativeSection').slideUp();
     $('.results').slideDown();
+  });
+
+  $('.services-frequency').on("click touch", ".source-submit", function() {
+    $('#foodpantry').val($('.foodpantry').val());
+    $('#soupkitchen').val($('.soupkitchen').val());
+    $('#mealdelivery').val($('.mealdelivery').val());
+    $('#schoolbackpack').val($('.schoolbackpack').val());
+    $('.services-frequency .question-body').slideUp();
+    $('.services-frequency .answer-popup').slideDown();
+    scrollUp();
   });
 
   $("#zipbox input").keyup(function(event){
@@ -152,7 +191,8 @@ $(document).ready(function(){
   })
 
   $('.snap-question').on("click touch", ".answer", function() {
-    $( ".snap-question .person, .snap-question .answer" ).each(function( index ) {
+    $('#snap').val($('input[data-input="snap"]').val());
+    $( ".snap-question .person, .snap-answer .person" ).each(function( index ) {
       if ( index < stateData[4] ) {
         $(this).addClass('recipient');
       }
@@ -161,12 +201,21 @@ $(document).ready(function(){
   });
 
   $('.wic-question').on("click touch", ".answer", function() {
-    $( ".wic-question .person, .wic-answer .person" ).each(function( index ) {
+    $('.wic-question .answer-popup').slideDown();
+    scrollUp();
+    $( ".wic-question .person" ).each(function( index ) {
       if ( index < stateData[5] ) {
         $(this).addClass('recipient');
       }
       $(this).delay(20 * index).fadeIn();
     });
+    $('#wic').val($(this).attr('data-input'));
+  });
+
+  $('.lunch-question').on("click touch", ".answer", function() {
+    $('.lunch-question .answer-popup').slideDown();
+    scrollUp();
+    $('#schoolmeals').val($(this).attr('data-input'));
   });
 
   // Results
@@ -252,6 +301,21 @@ $(document).ready(function(){
     }
   };
 
+  // SWITCH STATE
+   $(".state-select-wrapper").on('click touch', '.source-submit', function(){
+    var newState = $('#state-select').val();
+    $('.userState').text(states[newState][1]);
+    $('.snap-data').text(states[newState][4]);
+    $('.wic-data').text(states[newState][5]);
+    $('.insecure-data').text(states[newState][6]);
+    $('.hardship-data').text(states[newState][7]);
+    $('.lunch-data').text(states[newState][8]);
+    $('.breakfast-data').text(states[newState][9]);
+    $('.stateMedian').text(commaSeparateNumber(states[newState][2]));
+    $('.food-hardship').text(states[newState][7]);
+    scrollUp();
+  });
+
 // states key:[ 0 state, 1 name, 2 median, 3 icon, 4 snap, 5 wic, 6 insecure, 7 hardship, 8 lunch, 9 breakfast]
 
   function closeIntro() {
@@ -282,14 +346,6 @@ $(document).ready(function(){
       });
       scrollUp();
     }
-  }
-
-  function showResults() {
-    var questions = $(".question").length -1,question_modulus = questions % 3, results_range = Math.floor(questions/3), break1 = 0, break2 =0;
-
-    $('html,body').animate({scrollTop: $(".results").offset().top - 50}, function(){$('.score-field').slideDown();});
-    $(".results").show();
-    $(".your-score-weight").prepend('<h2 class="user-score">' + answerss + ' out of ' + $('.question').length + '!</h2>');
   }
 
   function commaSeparateNumber(val){
@@ -355,12 +411,23 @@ $(document).ready(function(){
     onUpdate: null, // callback method for every time the element is updated,
     onComplete: null // callback method for when the element finishes updating
   };
+});
 
   // SCROLL
-  function scrollUp() {
-    $('html, body').animate({
-      scrollTop: $(".wrapper").offset().top - 200
-    }, 1000);
-  }
 
-});
+function scrollUp() {
+  $('html, body').animate({
+    scrollTop: $(".wrapper").offset().top - 200
+  }, 100);
+}
+
+function setPersonChart( chart, data ) {
+  $( "."+chart+" .person" ).each(function( index ) {
+    if ( index < stateData[data] ) {
+      $(this).addClass('recipient');
+    }
+    $(this).fadeIn();
+  });
+}
+
+

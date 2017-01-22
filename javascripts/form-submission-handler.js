@@ -5,6 +5,8 @@ function validEmail(email) { // see:
 }
 // get all data in form and return object
 function getFormData() {
+  $("#obstacles").val($('.access-issues').val());
+  $("#email").val($('.email').val());
   var elements = document.getElementById("gform").elements; // all form elements
   var fields = Object.keys(elements).map(function(k) {
     if(elements[k].name !== undefined) {
@@ -35,7 +37,8 @@ function getFormData() {
 }
 
 function handleFormSubmit(event) {  // handles form submit withtout any jquery
-  event.preventDefault();           // we are submitting via xhr below
+  event.preventDefault();
+  scrollUp();         // we are submitting via xhr below
   var data = getFormData();         // get the values submitted in the form
   // if( !validEmail(data.email) ) {   // if email is not valid show error
   //   document.getElementById('email-invalid').style.display = 'block';
@@ -50,7 +53,10 @@ function handleFormSubmit(event) {  // handles form submit withtout any jquery
         // console.log( xhr.status, xhr.statusText )
         // console.log(xhr.responseText);
         document.getElementById('gform').style.display = 'none'; // hide form
-        document.getElementById('thankyou_message').style.display = 'block';
+        // document.getElementById('thankyou_message').style.display = 'block';
+        $('.results-questions').slideUp();
+        $('.results-wrapper').slideDown();
+        setPersonChart( "snap-answer", 4);
         return;
     };
     // url encode form data for sending as post data

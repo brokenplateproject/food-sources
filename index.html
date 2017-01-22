@@ -24,58 +24,11 @@
 
     <link href="stylesheets/site.css" rel="stylesheet" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script data-cfasync="false" type="text/javascript" src="javascripts/form-submission-handler.js"></script>
     <script src="javascripts/all.js"></script>
   </head>
 
   <body class="index">
-    ---
-title: form
----
-
-<form id="gform" method="post" action="https://script.google.com/macros/s/AKfycbxRGjQKjOvlXmr4Ho91H7_Ur19XBTNR2r3WPp_lTXDv68HvKIc/exec">
-  <input id="income" name="income" />
-  <input id="zipcode" name="zipcode" />
-  <input id="state" name="state" />
-  <input id="adults" name="adults" />
-  <input id="children" name="children" />
-  <input id="budget" name="budget" />
-  <input id="bigbox" name="bigbox" value="false" />
-  <input id="smallbox" name="smallbox" value="false" />
-  <input id="grocery" name="grocery" value="false" />
-  <input id="convenience" name="convenience" value="false" />
-  <input id="farmersmarket" name="farmersmarket" value="false" />
-  <input id="restaurantfastfood" name="restaurantfastfood" value="false" />
-  <input id="frequency" name="frequency" />
-  <input id="distance" name="distance" />
-  <input id="bus" name="bus value="false"" />
-  <input id="walk" name="walk" value="false" />
-  <input id="taxi" name="taxi" value="false" />
-  <input id="personalvehicle" name="personalvehicle" value="false" />
-  <input id="friendsvehicle" name="friendsvehicle" value="false" />
-  <input id="snap" name="snap" />
-  <input id="wic" name="wic" />
-  <input id="schoolmeals" name="schoolmeals" />
-  <input id="foodpantry" name="foodpantry" />
-  <input id="soupkitchen" name="soupkitchen" />
-  <input id="mealdelivery" name="mealdelivery" />
-  <input id="schoolbackpack" name="schoolbackpack" />
-  <input id="charityfrequency" name="charityfrequency" />
-  <input id="obstacles" name="obstacles" />
-
-
-  <button class="button-success pure-button button-xlarge">
-    <i class="fa fa-paper-plane"></i>&nbsp;Send</button>
-
-</form>
-
-<div style="display:none;" id="thankyou_message">
-  <h2><em>Thanks</em> for contacting us!
-    We will get back to you soon!</h2>
-</div>
-
-<!-- Submit the Form to Google Using "AJAX" -->
-<script data-cfasync="false" type="text/javascript" src="javascripts/form-submission-handler.js"></script>
-
     <header class="fixed-header">
   <div class="logo">
   <svg xmlns="http://www.w3.org/2000/svg" width="513.8" height="132.5" viewBox="0 0 513.8 132.5"><path d="M513.8 96h-25.7V42.3h23.6v3.5h-20v17.6h18.1V67h-18.1v25.3h22c.1 1.3.1 2.5.1 3.7z"/><path fill="#EC783B" d="M55.3 25.4c24.6 1.3 49.2 22.3 49.5 52.9.3 31-24.6 52.5-49.5 53.8V25.4z"/><path d="M114.4 95.9V42.3c.2-.1.4-.1.6-.1 5.5 0 11 0 16.5.1 3.2.1 6.1 1.1 8.6 3.1 2.4 1.9 3.9 4.3 4 7.3.2 2.7.2 5.4 0 8.1-.1 1.5-.9 2.9-1.6 4.2 0 .1.1.2.1.3 2.5 2.2 3.8 5.1 4.2 8.4.6 4.5.6 8.898-.7 13.3-1.5 5.4-5.5 8.7-11.1 8.8-6.8.2-13.6.1-20.4.1.1.1 0 0-.2 0zm9.6-9.5h10.7c1 0 2-.4 2.3-1.6.8-3.1 1.3-6.2.7-9.5-.4-2.3-1.9-3.5-3.8-4.4-.2-.1-.6-.1-.9 0-2.8.9-5.5 1.8-8.3 2.7-.3.1-.6.5-.6.8-.2 4-.1 7.9-.1 12zm0-34.4v11.8c3.4-1.2 6.6-2.4 9.9-3.6.8-.3 1.1-1 1.1-1.8 0-1-.1-2.1-.1-3.1-.1-2.2-.6-3-2.8-3.2-2.7-.3-5.3-.1-8.1-.1zm193.3 14v29.9h-9.6V42.2h9.1c.1.3.1.5.2.8.2 2.7 1.2 5.2 2.6 7.5 3.7 6.1 7.5 12.2 11.3 18.4.1 0 .2-.1.4-.1V42.3h9.6V96h-9.3c-.1-.8-.1-1.5-.2-2.3-.3-4.4-2.2-8.3-4.3-12.102C324.2 76.4 321 71.5 318 66.4c-.1-.2-.2-.3-.4-.4-.1-.1-.2 0-.3 0zM184.2 96h-9.5c-.1-.6-.1-1.1-.2-1.6-.3-5.5-2.7-10.3-5.2-15.1-.8-1.5-1.6-2.8-2.4-4.3-.3-.6-.7-.7-1.3-.5-1.1.4-2.7.4-3.3 1.2-.6.8-.2 2.3-.2 3.5v16.898h-9.5v-53.8c.1 0 .3-.1.4-.1 5.6.1 11.1 0 16.7.2 3.7.2 6.9 1.7 9.6 4.3 2.2 2.1 3.3 4.6 3.3 7.7 0 2.4.1 4.9-.1 7.3-.3 3.8-2.3 6.7-5.5 8.7-.4.2-.7.5-1.2.7C180.1 78.8 184.4 86.6 184.2 96zm-22-44.3v13.9c3.2-1.1 6.3-2.2 9.3-3.3 1-.4 1.5-1.2 1.5-2.2v-4.5c0-1.8-.3-2.3-2-3-2.8-1.3-5.7-.8-8.8-.9zm62.3 17.2c-.1 3.6-.2 8.4-.4 13.2-.4 8.4-5.7 13.9-14.1 14.6-3.6.3-7.2.2-10.7-1-5.7-2.1-9-6.3-9.4-12.3-.5-7.2-.4-14.5-.4-21.7 0-2.7.1-5.5.5-8.2 1.1-6.9 5.4-10.9 12.3-11.9 3.3-.5 6.6-.4 9.9.2 7.1 1.3 11.5 6.4 11.9 13.6.2 4.1.2 8.2.4 13.5zm-25.7.6c.2 3.9.3 8.3.6 12.8.2 2.7 1.6 4.2 4.3 4.6 1.9.3 3.8.3 5.7.2 3.6-.3 4.9-1.8 5.2-5.5.1-1.9.3-3.8.2-5.7 0-6.6-.1-13.1-.3-19.7-.1-2.9-1.4-4.5-4-4.9-2.1-.3-4.2-.4-6.3-.2-3.5.3-4.6 1.5-4.8 5.1-.3 4.1-.4 8.4-.6 13.3zm56.9-1.8c4.9 8.9 10.3 17.5 10.2 28.2-.3 0-.6.1-.8.1h-7.7c-.5 0-1.1.1-1.1-.7 0-5.8-2.5-10.8-5.1-15.7-1.4-2.7-3-5.3-4.5-8-1.6.6-3.2 1.2-4.6 1.8-.3.1-.5.8-.5 1.2v21.3h-9.5V42.2h9.5v21.1c3.1-1.3 6-2.5 8.8-3.8 1.8-.9 2.5-2.6 2.5-4.5.1-3.8 0-7.5.1-11.3v-1.5h9.5c0 .1.1.3.1.5 0 4.2.102 8.3-.1 12.5-.2 5-2.3 9.2-6.4 12.1l-.4.4zM301.4 96h-28.8V42.2h27.2v9.5h-17.6V61h16v9.6h-16v15.9h19.2V96zm149.7 0h-3.5c-.2-1.7-.4-3.3-.7-5-.8-3.8-1.8-7.6-2.7-11.4-.1-.3-.6-.8-.9-.8H422c-1.2 5.7-2.4 11.4-3.6 17.2H415c.2-1.8.3-3.6.6-5.3 1.8-10.9 5.4-21.3 9.102-31.6 1.898-5.3 4-10.5 5.898-15.7.3-.8.7-1.1 1.5-1.1 2.7.1 2.7 0 3.7 2.6 4.8 12.1 9.5 24.2 12.7 36.8 1.1 4.3 1.7 8.8 2.5 13.2.1.2.1.6.1 1.1zm-17.9-48.9c-.1 0-.3.1-.4.1-3.5 9.1-6.8 18.4-9.6 27.8h19.7c-3.2-9.4-6.5-18.6-9.7-27.9zm-81.9-4.8h13.6c3.2 0 6.2 1 8.8 2.9 2.3 1.7 3.8 3.8 4 6.7.2 2.5.4 5 .4 7.5-.102 3.9-2 6.9-5.5 8.5-3.3 1.5-6.7 2.5-10.102 3.6-2.5.8-5 1.5-7.6 2.2v22.2h-3.6c.002-17.8.002-35.7.002-53.6zm3.6 27.6c2.9-.9 5.7-1.6 8.5-2.5 2.2-.7 4.4-1.4 6.6-2.3 2.3-.9 4.2-2.4 4.3-5 .2-2.7.1-5.4-.3-8.1-.2-1.2-1.1-2.6-2-3.4-1.3-1-2.9-1.6-4.4-2.2-.7-.3-1.5-.3-2.2-.4h-10.3c-.2 7.9-.2 15.8-.2 23.9zM471.7 96H468V46.1h-11.6v-3.7h27v3.7h-11.6c-.1 16.6-.1 33.2-.1 49.9zm-62.6-3.6v3.5h-25.6V42.3h3.6v50.1h22z"/><path fill="#EC783B" d="M50.4 106.7C25.8 105.4 1.2 84.4.9 53.8.7 22.8 25.5 1.3 50.4 0v106.7z"/></svg>
@@ -136,18 +89,23 @@ title: form
         <li class="question household-question" id="question0" rel="0">
   <div class="holderr">
     <div class="question-body">
-      <h3>Who is in your household?</h3>
+      <h3>How big is your household?</h3>
       <div class="input-error" id="householderror">
         Please enter a valid household number
       </div>
-      <h4>Adults</h4> <input id="household-adult" min="0" step="1" type="number" value="0">
-      <h4>Children</h4> <input id="household-child" min="0" step="1" type="number" value="0">
+      <div class="householdentry">
+        <h4>Number of adults</h4> <input id="household-adult" min="0" step="1" type="number" value="0">
+      </div>
+      <div class="householdentry">
+        <h4>Number of children</h4> <input id="household-child" min="0" step="1" type="number" value="0">
+      </div>
       <div class="next-button">
         Continue
       </div>
     </div>
     <div class="answer-popup">
       <div class="state-income">
+        <svg class="household-icon" xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 100 100" x="0px" y="0px"><path d="M52.52,3.56a3.37,3.37,0,0,0-5,0l-43.66,49a2.58,2.58,0,0,0,1.92,4.29h9.92v36a4.71,4.71,0,0,0,4.71,4.71H79.63a4.71,4.71,0,0,0,4.71-4.71v-36h9.92a2.57,2.57,0,0,0,1.92-4.29Zm22.17,82.6a1.16,1.16,0,0,1-1.16,1.16H26.46a1.16,1.16,0,0,1-1.16-1.16V83.43a8.23,8.23,0,0,1,5.08-7.6,5.61,5.61,0,1,1,6.31,0,8.25,8.25,0,0,1,3,2.15,11.13,11.13,0,0,1,6.05-6.15,7.57,7.57,0,1,1,8.5,0A11.12,11.12,0,0,1,60.31,78a8.25,8.25,0,0,1,3-2.15,5.61,5.61,0,1,1,6.31,0,8.23,8.23,0,0,1,5.08,7.6Z"></path></svg>
         The median in the United States is <strong>2.53</strong> people per household.<br>
         <div class="data-source">
           Source: <a href="https://www.census.gov/hhes/families/files/hh4.csv" target="_blank">The United States Census</a>
@@ -163,7 +121,7 @@ title: form
         <li class="question source-question" id="question1" rel="1">
   <div class="holderr">
     <div class="question-body">
-      <h3>Where do you source food from?</h3>
+      <h3>How do you get your food?</h3>
       <h6>Choose all that apply</h6>
       <ul class="answers">
         <li class="markets-answer" data-answer="usesMarkets" data-section="marketSection" rel="3">Markets (Food Banks, Pantries, Soup Kitchens)</li>
@@ -187,8 +145,8 @@ title: form
     <div class="holderr">
       <div class="question-body">
         <h3>How much do you spend per month on food?</h3>
-        <h4>$</h4><input class="dollar" type="number" value="0">
-        <div class="next-question" data-question="monthly-budget" data-next-question="store-type">
+        <h4>$</h4><input class="budget" type="number" value="0">
+        <div class="next-question" data-input="budget" data-question="monthly-budget" data-next-question="store-type">
           next
         </div>
       </div>
@@ -199,14 +157,17 @@ title: form
         <h3>Where do you source food from most often?</h3>
         <h6>Choose all that apply</h6>
         <ul class="answers">
-          <li class="big-box" data-answer="2" data-answer-weight="3" rel="1">Big Box (Walmart, Target, Sam's Club)</li>
-          <li class="small-box" data-answer="2" data-answer-weight="3" rel="2">Small Box (CVS, Walgreens, Dollar General)</li>
-          <li class="grocery" data-answer="2" data-answer-weight="3" rel="3">Grocery Store (Kroger, Whole Foods, Piggly Wiggly, Save-A-Lot)</li>
-          <li class="convenience" data-answer="2" data-answer-weight="3" rel="4">Convenience Store (Gas station, BFS, 7-11)</li>
-          <li class="not-selected" data-answer="2" data-answer-weight="3" rel="5">Farmers Market/Cooperative/Local Food Store</li>
-          <li class="not-selected" data-answer="2" data-answer-weight="3" rel="5">Restaurants/Fast Food/Coffee Shops</li>
+          <li class="big-box" data-input="bigbox" data-answer-weight="3" rel="1">Big Box (Walmart, Target, Sam's Club)</li>
+          <li class="small-box" data-input="smallbox" data-answer-weight="3" rel="2">Small Box (CVS, Walgreens, Dollar General)</li>
+          <li class="grocery" data-input="grocery" data-answer-weight="3" rel="3">Grocery Store (Kroger, Whole Foods, Piggly Wiggly, Save-A-Lot)</li>
+          <li class="convenience" data-input="convenience" data-answer-weight="3" rel="4">Convenience Store (Gas station, BFS, 7-11)</li>
+          <li class="not-selected" data-input="farmersmarket" data-answer-weight="3" rel="5">Farmers Market/Cooperative/Local Food Store</li>
+          <li class="not-selected" data-input="restaurantfastfood" data-answer-weight="3" rel="5">Restaurants/Fast Food/Coffee Shops</li>
         </ul>
-        <div class="next-question" data-question="store-type" data-questions="10" data-next-question="frequency-question">
+        <div class="input-error">
+          Please choose at least one source.
+        </div>
+        <div class="source-submit" data-question="store-type" data-questions="10" data-next-question="frequency-question">
           Continue
         </div>
       </div>
@@ -215,8 +176,8 @@ title: form
   <li class="question frequency-question" id="question3" rel="3">
     <div class="holderr">
       <div class="question-body">
-        <h3>How many times do you go shopping for food in a week?</h3><input type="number" value="0">
-        <div class="next-question" data-question="frequency-question" data-questions="10" data-next-question="distance-question">
+        <h3>How many times do you go shopping for food in a week?</h3><input class="frequency" type="number" value="0">
+        <div class="next-question" data-input="frequency" data-question="frequency-question" data-questions="10" data-next-question="distance-question">
           Continue
         </div>
       </div>
@@ -225,8 +186,8 @@ title: form
   <li class="question distance-question" id="question4" rel="4">
     <div class="holderr">
       <div class="question-body">
-        <h3>On average, how far do you travel to get to the store?</h3><input type="number" value="0">
-        <div class="next-question" data-question="distance-question" data-questions="transportation-question" data-next-question="transportation-question">
+        <h3>On average, how far do you travel to get to the store?</h3><input class="distance" value="0"> <strong>miles</strong>
+        <div class="next-question" data-input="distance" data-question="distance-question" data-questions="transportation-question" data-next-question="transportation-question">
           Continue
         </div>
       </div>
@@ -234,19 +195,22 @@ title: form
   </li>
 
   <!-- NEEDS TO ADD DATA_NEXT_QUESTION ATTR of source of .final -->
-  <li class="question transportation-question final" id="question5" rel="5" style="">
+  <li class="question transportation-question" id="question5" rel="5" style="">
     <div class="holderr">
       <div class="question-body">
         <h3>How do you get to the store?</h3>
         <h6>Choose all that apply</h6>
         <ul class="answers">
-          <li class="not-selected" data-answer="2" data-answer-weight="3" rel="1">Bus</li>
-          <li class="not-selected" data-answer="2" data-answer-weight="3" rel="2">Walk</li>
-          <li class="not-selected" data-answer="2" data-answer-weight="3" rel="3">Taxi</li>
-          <li class="not-selected" data-answer="2" data-answer-weight="3" rel="4">Personal Vehicle</li>
-          <li class="not-selected" data-answer="2" data-answer-weight="3" rel="5">Friend's Vehicle</li>
+          <li class="not-selected" data-input="bus" data-answer-weight="3" rel="1">Bus</li>
+          <li class="not-selected" data-input="walk" data-answer-weight="3" rel="2">Walk</li>
+          <li class="not-selected" data-input="taxi" data-answer-weight="3" rel="3">Taxi</li>
+          <li class="not-selected" data-input="personalvehicle" data-answer-weight="3" rel="4">Personal Vehicle</li>
+          <li class="not-selected" data-input="friendsvehicle" data-answer-weight="3" rel="5">Friend's Vehicle</li>
         </ul>
-        <div class="next-question" data-question="transportation-question" data-questions="10" data-next-question="results">
+        <div class="input-error">
+          Please choose at least one mode of transportation.
+        </div>
+        <div class="source-submit final" data-question="transportation-question" data-questions="10" data-next-question="results">
           Continue
         </div>
       </div>
@@ -259,7 +223,7 @@ title: form
     <div class="holderr">
       <div class="question-body">
         <h3>Do you recieve SNAP? If so, how much do you recieve monthly?</h3>
-        <h4>$</h4><input type="number" value="0">
+        <h4>$</h4><input type="number" value="0" data-input="snap">
         <div class="answer">
           Continue
         </div>
@@ -484,12 +448,9 @@ title: form
       <div class="question-body">
         <h3>Do you receive WIC</h3>
         <ul class="answers">
-          <li class="not-selected" data-answer="2" data-answer-weight="3" rel="1">Yes</li>
-          <li class="not-selected" data-answer="2" data-answer-weight="3" rel="2">No</li>
+          <li class="not-selected answer" data-input="true">Yes</li>
+          <li class="not-selected answer" data-input="false">No</li>
         </ul>
-        <div class="answer">
-          Continue
-        </div>
       </div>
       <div class="answer-popup">
         <div class="state-income">
@@ -707,17 +668,14 @@ title: form
       </div>
     </div>
   </li>
-  <li class="question lunch-question final" id="question8" rel="8" style="">
+  <li class="question lunch-question" id="question8" rel="8" style="">
     <div class="holderr">
       <div class="question-body">
         <h3>Do your children recieve free or reduced cost school meals?</h3>
         <ul class="answers">
-          <li class="not-selected" data-answer="2" data-answer-weight="3" rel="1">Yes</li>
-          <li class="not-selected" data-answer="2" data-answer-weight="3" rel="2">No</li>
+          <li class="not-selected answer" data-input="true">Yes</li>
+          <li class="not-selected answer" data-input="false">No</li>
         </ul>
-        <div class="answer">
-          Continue
-        </div>
       </div>
       <div class="answer-popup">
         <div class="state-income">
@@ -725,7 +683,7 @@ title: form
           <div class="data-source">
             Source: <a href="https://www.fns.usda.gov/nslp/national-school-lunch-program-nslp" target="_blank">USDA Food and Nutrition Service</a>
           </div>
-          <div class="next-question" data-question="lunch-question" data-next-question="results">
+          <div class="next-question final" data-question="lunch-question" data-next-question="results">
             next
           </div>
         </div>
@@ -740,11 +698,14 @@ title: form
         <h3>Have you ever used any of the following services?</h3>
         <h6>Choose all that apply</h6>
         <ul class="answers">
-          <li class="not-selected" data-answer="2" data-section="pantry" rel="1">Food Pantry</li>
-          <li class="not-selected" data-answer="2" data-section="kitchen" rel="2">Soup Kitchen</li>
-          <li class="not-selected" data-answer="2" data-section="delivery" rel="3">Meal Delivery Program</li>
-          <li class="not-selected" data-answer="2" data-section="backpack" rel="4">School Backpack Program</li>
+          <li class="not-selected" data-input="foodpantry" data-section="pantry" rel="1">Food Pantry</li>
+          <li class="not-selected" data-input="soupkitchen" data-section="kitchen" rel="2">Soup Kitchen</li>
+          <li class="not-selected" data-input="mealdelivery" data-section="delivery" rel="3">Meal Delivery Program</li>
+          <li class="not-selected" data-input="schoolbackpack" data-section="backpack" rel="4">School Backpack Program</li>
         </ul>
+        <div class="input-error serviceserror">
+          Please make at least one selection.
+        </div>
         <div class="source-submit">
           Continue
         </div>
@@ -758,25 +719,22 @@ title: form
         <ul>
           <li class="pantry">
             <h7>Food Pantry: </h7>
-            <input type="number" value="0">
+            <input class="foodpantry" type="number" value="0">
           </li>
           <li class="kitchen">
             <h7>Soup Kitchen: </h7>
-            <input type="number" value="0">
+            <input class="soupkitchen" type="number" value="0">
           </li>
           <li class="delivery">
             <h7>Meal delivery program: </h7>
-            <input type="number" value="0">
+            <input class="mealdelivery" type="number" value="0">
           </li>
           <li class="backpack">
             <h7>School backpack program: </h7>
-            <input type="number" value="0">
+            <input class="schoolbackpack" type="number" value="0">
           </li>
         </ul>
-        <div class="serviceserror">
-          Please make at least one selection.
-        </div>
-        <div class="answer">
+        <div class="source-submit">
           Continue
         </div>
       </div>
@@ -786,7 +744,7 @@ title: form
           <div class="data-source">
             Source: Feeding America: 2014 Overall Food Insecurity:<br>Data by County &amp; Congressional District in Each State
           </div>
-        <div class="next-question" data-question="services-frequency" data-next-question="results">
+        <div class="next-question final" data-question="services-frequency" data-next-question="results">
           next
         </div>
       </div>
@@ -804,7 +762,7 @@ title: form
           <li class="not-selected" data-answer="2" data-section="hunting" rel="2">Hunting</li>
           <li class="not-selected" data-answer="2" data-section="fishing" rel="3">Fishing</li>
         </ul>
-        <div class="source-submit">
+        <div class="source-submit" data-question="services-question" data-next-question="frequency-question">>
           Continue
         </div>
       </div>
@@ -817,19 +775,62 @@ title: form
           <textarea class="access-issues"></textarea>
           <h6>Can we contact you at a later date to ask you more about your food sourcing strategy?</h6>
           <input type="text" placeholder="email" class="email">
-          <div class="source-submit">Thank You</div>
+          <form id="gform" method="post" action="https://script.google.com/macros/s/AKfycbxRGjQKjOvlXmr4Ho91H7_Ur19XBTNR2r3WPp_lTXDv68HvKIc/exec">
+  <input id="income" name="income" />
+  <input id="zipcode" name="zipcode" />
+  <input id="state" name="state" />
+  <input id="adults" name="adults" />
+  <input id="children" name="children" />
+  <input id="budget" name="budget" />
+  <input id="bigbox" name="bigbox" value="false" />
+  <input id="smallbox" name="smallbox" value="false" />
+  <input id="grocery" name="grocery" value="false" />
+  <input id="convenience" name="convenience" value="false" />
+  <input id="farmersmarket" name="farmersmarket" value="false" />
+  <input id="restaurantfastfood" name="restaurantfastfood" value="false" />
+  <input id="frequency" name="frequency" />
+  <input id="distance" name="distance" />
+  <input id="bus" name="bus" value="false" />
+  <input id="walk" name="walk" value="false" />
+  <input id="taxi" name="taxi" value="false" />
+  <input id="personalvehicle" name="personalvehicle" value="false" />
+  <input id="friendsvehicle" name="friendsvehicle" value="false" />
+  <input id="snap" name="snap" />
+  <input id="wic" name="wic" />
+  <input id="schoolmeals" name="schoolmeals" />
+  <input id="foodpantry" name="foodpantry" />
+  <input id="soupkitchen" name="soupkitchen" />
+  <input id="mealdelivery" name="mealdelivery" />
+  <input id="schoolbackpack" name="schoolbackpack" />
+  <input id="charityfrequency" name="charityfrequency" />
+  <input id="gardening" name="gardening" />
+  <input id="hunting" name="hunting" value="false" />
+  <input id="fishing" name="fishing" value="false" />
+  <input id="obstacles" name="obstacles" />
+  <input id="email" name="email" />
+
+
+  <button class="button-success pure-button source-submit">
+    <i class="fa fa-paper-plane"></i>&nbsp;Send</button>
+
+</form>
+
+<div style="display:none;" id="thankyou_message">
+  <h2><em>Thanks</em> for contacting us!
+    We will get back to you soon!</h2>
+</div>
+
         </div>
         <div class="results-wrapper">
   <h2 class="userState">Colorado</h2>
 
   <div class="results-data">
-    <div class="state-income">
-      <p>Median Income:<strong>$<span class="stateMedian"></span></strong></p>
-      <p>At least once over a twelve-month period nearly <strong><span class="food-hardship"></span>%</strong><sup>**</sup> of people in <strong class="userState"></strong> did not have enough resources to cover their food costs.</p>
-      <p>Approximately <strong class="wic-data"></strong> of every <strong>100</strong> people<br> receive WIC benefits in <strong><span class="userState">0</span></strong>.</p>
-     <!--  <div class="snap-answer">
-        <div class="personchart group">
-          <div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
+    <p>Median Income:<strong>$<span class="stateMedian"></span></strong></p>
+    <p>At least once over a twelve-month period nearly <strong><span class="food-hardship"></span>%</strong><sup>**</sup> of people in <strong class="userState"></strong> did not have enough resources to cover their food costs.</p>
+    <p>Approximately <strong class="wic-data"></strong> of every <strong>100</strong> people receive WIC benefits in <strong><span class="userState">0</span></strong>.</p>
+    <div class="snap-answer">
+      <div class="personchart group">
+        <div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
 
 <div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
 
@@ -1030,378 +1031,376 @@ title: form
 <div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
 
 
-        </div>
-      </div> -->
-      <p><strong class="wic-data"></strong> of every <strong>100</strong> people<br> receive WIC benefits in <strong><span class="userState">0</span></strong>.</p>
-      <!-- <div class="wic-answer">
-        <div class="personchart group">
-          <div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
-
-<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
-
-<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
-
-<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
-
-<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
-
-<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
-
-<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
-
-<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
-
-<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
-
-<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
-
-<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
-
-<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
-
-<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
-
-<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
-
-<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
-
-<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
-
-<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
-
-<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
-
-<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
-
-<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
-
-<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
-
-<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
-
-<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
-
-<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
-
-<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
-
-<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
-
-<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
-
-<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
-
-<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
-
-<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
-
-<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
-
-<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
-
-<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
-
-<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
-
-<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
-
-<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
-
-<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
-
-<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
-
-<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
-
-<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
-
-<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
-
-<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
-
-<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
-
-<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
-
-<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
-
-<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
-
-<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
-
-<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
-
-<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
-
-<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
-
-<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
-
-<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
-
-<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
-
-<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
-
-<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
-
-<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
-
-<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
-
-<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
-
-<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
-
-<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
-
-<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
-
-<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
-
-<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
-
-<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
-
-<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
-
-<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
-
-<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
-
-<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
-
-<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
-
-<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
-
-<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
-
-<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
-
-<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
-
-<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
-
-<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
-
-<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
-
-<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
-
-<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
-
-<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
-
-<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
-
-<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
-
-<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
-
-<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
-
-<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
-
-<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
-
-<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
-
-<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
-
-<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
-
-<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
-
-<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
-
-<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
-
-<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
-
-<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
-
-<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
-
-<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
-
-<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
-
-<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
-
-<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
-
-<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
-
-<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
-
-
-        </div>
-      </div> -->
-      <p><strong class="lunch-data"></strong> children received school lunches and <strong class="breakfast-data"></strong> received breakfasts.</p>
-      <p class="answer-copy">Approximately <strong class="insecure-data">0</strong> in <strong>100</strong> are food insecure in <strong class="userState">Colorado</strong>.</p>
+      </div>
     </div>
+    <p><strong class="wic-data"></strong> of every <strong>100</strong> people<br> receive WIC benefits in <strong><span class="userState">0</span></strong>.</p>
+    <!-- <div class="wic-answer">
+      <div class="personchart group">
+        <div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
+
+<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
+
+<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
+
+<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
+
+<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
+
+<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
+
+<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
+
+<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
+
+<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
+
+<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
+
+<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
+
+<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
+
+<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
+
+<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
+
+<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
+
+<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
+
+<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
+
+<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
+
+<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
+
+<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
+
+<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
+
+<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
+
+<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
+
+<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
+
+<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
+
+<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
+
+<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
+
+<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
+
+<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
+
+<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
+
+<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
+
+<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
+
+<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
+
+<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
+
+<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
+
+<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
+
+<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
+
+<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
+
+<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
+
+<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
+
+<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
+
+<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
+
+<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
+
+<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
+
+<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
+
+<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
+
+<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
+
+<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
+
+<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
+
+<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
+
+<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
+
+<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
+
+<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
+
+<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
+
+<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
+
+<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
+
+<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
+
+<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
+
+<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
+
+<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
+
+<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
+
+<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
+
+<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
+
+<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
+
+<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
+
+<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
+
+<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
+
+<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
+
+<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
+
+<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
+
+<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
+
+<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
+
+<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
+
+<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
+
+<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
+
+<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
+
+<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
+
+<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
+
+<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
+
+<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
+
+<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
+
+<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
+
+<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
+
+<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
+
+<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
+
+<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
+
+<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
+
+<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
+
+<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
+
+<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
+
+<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
+
+<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
+
+<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
+
+<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
+
+<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
+
+<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
+
+<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
+
+<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
+
+<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
+
+<div class="person"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.5" viewBox="0 0 12 12.5"><circle cx="6" cy="3" r="3"/><path d="M0 12.5v-.1c0-3.3 2.7-6 6-6s6 2.7 6 6v.1"/></svg></div>
+
+
+      </div>
+    </div> -->
+    <p><strong class="lunch-data"></strong> children received school lunches and <strong class="breakfast-data"></strong> received breakfasts.</p>
+    <p class="answer-copy">Approximately <strong class="insecure-data">0</strong> in <strong>100</strong> are food insecure in <strong class="userState">Colorado</strong>.</p>
   </div>
   <div class="state-select-wrapper">
-  <h4 class="state-select-label">Browse your state data</h4>
-  <div>
-    <div class="styled-select">
-      <select id="state-select">
-        <option value="Alabama">
-          Alabama
-        </option>
-        <option value="Alaska">
-          Alaska
-        </option>
-        <option value="Arizona">
-          Arizona
-        </option>
-        <option value="Arkansas">
-          Arkansas
-        </option>
-        <option value="California">
-          California
-        </option>
-        <option value="Colorado">
-          Colorado
-        </option>
-        <option value="Connecticut">
-          Connecticut
-        </option>
-        <option value="Delaware">
-          Delaware
-        </option>
-        <option value="District Of Columbia">
-          District Of Columbia
-        </option>
-        <option value="Florida">
-          Florida
-        </option>
-        <option value="Georgia">
-          Georgia
-        </option>
-        <option value="Hawaii">
-          Hawaii
-        </option>
-        <option value="Idaho">
-          Idaho
-        </option>
-        <option value="Illinois">
-          Illinois
-        </option>
-        <option value="Indiana">
-          Indiana
-        </option>
-        <option value="Iowa">
-          Iowa
-        </option>
-        <option value="Kansas">
-          Kansas
-        </option>
-        <option value="Kentucky">
-          Kentucky
-        </option>
-        <option value="Louisiana">
-          Louisiana
-        </option>
-        <option value="Maine">
-          Maine
-        </option>
-        <option value="Maryland">
-          Maryland
-        </option>
-        <option value="Massachusetts">
-          Massachusetts
-        </option>
-        <option value="Michigan">
-          Michigan
-        </option>
-        <option value="Minnesota">
-          Minnesota
-        </option>
-        <option value="Mississippi">
-          Mississippi
-        </option>
-        <option value="Missouri">
-          Missouri
-        </option>
-        <option value="Montana">
-          Montana
-        </option>
-        <option value="Nebraska">
-          Nebraska
-        </option>
-        <option value="Nevada">
-          Nevada
-        </option>
-        <option value="New Hampshire">
-          New Hampshire
-        </option>
-        <option value="New Jersey">
-          New Jersey
-        </option>
-        <option value="New Mexico">
-          New Mexico
-        </option>
-        <option value="New York">
-          New York
-        </option>
-        <option value="North Carolina">
-          North Carolina
-        </option>
-        <option value="North Dakota">
-          North Dakota
-        </option>
-        <option value="Ohio">
-          Ohio
-        </option>
-        <option value="Oklahoma">
-          Oklahoma
-        </option>
-        <option value="Oregon">
-          Oregon
-        </option>
-        <option value="Pennsylvania">
-          Pennsylvania
-        </option>
-        <option value="Rhode Island">
-          Rhode Island
-        </option>
-        <option value="South Carolina">
-          South Carolina
-        </option>
-        <option value="South Dakota">
-          South Dakota
-        </option>
-        <option value="Tennessee">
-          Tennessee
-        </option>
-        <option value="Texas">
-          Texas
-        </option>
-        <option value="Utah">
-          Utah
-        </option>
-        <option value="Vermont">
-          Vermont
-        </option>
-        <option value="Virginia">
-          Virginia
-        </option>
-        <option value="Washington">
-          Washington
-        </option>
-        <option value="West Virginia">
-          West Virginia
-        </option>
-        <option value="Wisconsin">
-          Wisconsin
-        </option>
-        <option value="Wyoming">
-          Wyoming
-        </option>
-      </select>
-    </div><button id="go" name="button" type="button">View</button>
+  <h4 class="state-select-label">Browse other state data</h4>
+  <div class="styled-select">
+    <select id="state-select">
+      <option value="0">
+        Alabama
+      </option>
+      <option value="1">
+        Alaska
+      </option>
+      <option value="2">
+        Arizona
+      </option>
+      <option value="3">
+        Arkansas
+      </option>
+      <option value="4">
+        California
+      </option>
+      <option value="5">
+        Colorado
+      </option>
+      <option value="6">
+        Connecticut
+      </option>
+      <option value="7">
+        Delaware
+      </option>
+      <option value="8">
+        District Of Columbia
+      </option>
+      <option value="9">
+        Florida
+      </option>
+      <option value="10">
+        Georgia
+      </option>
+      <option value="11">
+        Hawaii
+      </option>
+      <option value="12">
+        Idaho
+      </option>
+      <option value="13">
+        Illinois
+      </option>
+      <option value="14">
+        Indiana
+      </option>
+      <option value="15">
+        Iowa
+      </option>
+      <option value="16">
+        Kansas
+      </option>
+      <option value="17">
+        Kentucky
+      </option>
+      <option value="18">
+        Louisiana
+      </option>
+      <option value="19">
+        Maine
+      </option>
+      <option value="20">
+        Maryland
+      </option>
+      <option value="21">
+        Massachusetts
+      </option>
+      <option value="22">
+        Michigan
+      </option>
+      <option value="23">
+        Minnesota
+      </option>
+      <option value="24">
+        Mississippi
+      </option>
+      <option value="25">
+        Missouri
+      </option>
+      <option value="26">
+        Montana
+      </option>
+      <option value="27">
+        Nebraska
+      </option>
+      <option value="28">
+        Nevada
+      </option>
+      <option value="29">
+        New Hampshire
+      </option>
+      <option value="30">
+        New Jersey
+      </option>
+      <option value="31">
+        New Mexico
+      </option>
+      <option value="32">
+        New York
+      </option>
+      <option value="33">
+        North Carolina
+      </option>
+      <option value="34">
+        North Dakota
+      </option>
+      <option value="35">
+        Ohio
+      </option>
+      <option value="36">
+        Oklahoma
+      </option>
+      <option value="37">
+        Oregon
+      </option>
+      <option value="38">
+        Pennsylvania
+      </option>
+      <option value="39">
+        Rhode Island
+      </option>
+      <option value="40">
+        South Carolina
+      </option>
+      <option value="41">
+        South Dakota
+      </option>
+      <option value="42">
+        Tennessee
+      </option>
+      <option value="43">
+        Texas
+      </option>
+      <option value="44">
+        Utah
+      </option>
+      <option value="45">
+        Vermont
+      </option>
+      <option value="46">
+        Virginia
+      </option>
+      <option value="47">
+        Washington
+      </option>
+      <option value="48">
+        West Virginia
+      </option>
+      <option value="49">
+        Wisconsin
+      </option>
+      <option value="50">
+        Wyoming
+      </option>
+    </select>
+    <div class="source-submit" id="newstate">View</div>
   </div>
 </div>
 </div>

@@ -197,13 +197,27 @@
     color: #EC783B;
     margin-bottom: 0; }
   /* line 20, _questions.scss */
+  .holderr .householdentry {
+    display: block;
+    margin: 0 auto;
+    text-align: right;
+    width: 18rem; }
+  /* line 27, _questions.scss */
+  .holderr .household-icon {
+    float: left;
+    margin-right: .5rem;
+    width: 6rem; }
+    /* line 32, _questions.scss */
+    .holderr .household-icon path {
+      fill: #243757; }
+  /* line 37, _questions.scss */
   .holderr .household {
     margin-right: .5rem; }
-    /* line 23, _questions.scss */
+    /* line 40, _questions.scss */
     .holderr .household h4:last-child {
       margin-left: 1rem; }
 
-/* line 29, _questions.scss */
+/* line 46, _questions.scss */
 input[type="number"] {
   -webkit-appearance: none;
   border: thin solid #ddd;
@@ -214,12 +228,12 @@ input[type="number"] {
   text-align: center;
   width: 3rem; }
 
-/* line 40, _questions.scss */
+/* line 57, _questions.scss */
 input.dollar {
   text-align: left;
   width: 5rem; }
 
-/* line 45, _questions.scss */
+/* line 62, _questions.scss */
 .answer-popup {
   background: #fff none repeat scroll 0 0;
   background-color: rgba(255, 255, 255, 0.95);
@@ -229,33 +243,46 @@ input.dollar {
   overflow: hidden;
   z-index: 5; }
 
-/* line 54, _questions.scss */
+/* line 71, _questions.scss */
 .answer-popup.show {
   box-sizing: border-box;
   padding: 0 1rem;
   max-height: 1000px; }
 
-/* line 61, _questions.scss */
+/* line 78, _questions.scss */
 .question-body h3 {
   font-size: 1.625rem; }
 
-/* line 67, _questions.scss */
+/* line 84, _questions.scss */
 .services-frequency strong {
   color: #444; }
-/* line 71, _questions.scss */
+/* line 88, _questions.scss */
 .services-frequency ul {
   margin-bottom: 1.5rem; }
-/* line 75, _questions.scss */
+/* line 92, _questions.scss */
 .services-frequency li {
   margin-bottom: .625rem; }
-/* line 80, _questions.scss */
+/* line 97, _questions.scss */
 .services-frequency .answer-popup strong {
   color: #EC783B; }
 
-/* line 88, _questions.scss */
+/* line 105, _questions.scss */
 .source-question .answers li {
   color: #fff; }
 
+/* line 113, _questions.scss */
+input.budget, input.distance {
+  width: 6rem; }
+
+/* line 119, _questions.scss */
+input.budget {
+  text-align: left; }
+
+@media only screen and (min-width: 48rem) {
+  /* line 125, _questions.scss */
+  .holderr .household-icon {
+    margin-right: 1rem;
+    width: 12rem; } }
 /* line 1, _answers.scss */
 .answer,
 .source-submit {
@@ -365,16 +392,56 @@ input.dollar {
 /* line 1, _results.scss */
 .results {
   margin: 5rem 1rem; }
+  /* line 4, _results.scss */
+  .results h2 {
+    font-size: 2rem; }
+
+/* line 9, _results.scss */
+.state-select-wrapper {
+  text-align: center; }
+
+/* line 13, _results.scss */
+.snap-answer {
+  min-height: 8rem; }
+
+/* line 17, _results.scss */
+#state-select,
+#newstate {
+  display: inline-block;
+  margin: 0 2%;
+  width: 40%; }
+
+/* line 24, _results.scss */
+#state-select {
+  -webkit-appearance: none;
+  background-color: #aaa;
+  border-radius: 0;
+  border: 0;
+  box-sizing: border-box;
+  color: #fff;
+  font-family: "Archivo Narrow", helvetica, arial, sans-serif;
+  padding: 1rem; }
+
+/* line 35, _results.scss */
+button.source-submit {
+  border: 0;
+  -webkit-appearance: none; }
 
 /* line 1, _footer.scss */
 footer {
   background: url("../images/footer.gif") top center/cover;
+  clear: both;
   height: 3rem;
-  position: fixed;
+  margin-top: 3rem;
+  position: relative;
   bottom: 0;
   left: 0;
   width: 100%; }
 
+@media only screen and (min-width: 48rem) {
+  /* line 13, _footer.scss */
+  footer {
+    position: fixed; } }
 /* line 1, _income.scss */
 .state-income {
   background-color: #f5f5f5;
