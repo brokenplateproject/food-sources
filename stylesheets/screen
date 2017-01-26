@@ -483,8 +483,24 @@ button.source-submit {
   border: 0;
   -webkit-appearance: none; }
 
+/* line 69, _results.scss */
+.embed-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  max-width: 100%; }
+
+/* line 69, _results.scss */
+.embed-container iframe, .embed-container object, .embed-container embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; }
+
 @media only screen and (min-width: 48rem) {
-  /* line 71, _results.scss */
+  /* line 73, _results.scss */
   .results h2 {
     font-size: 3rem; } }
 /* line 1, _footer.scss */
