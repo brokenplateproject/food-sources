@@ -2,13 +2,13 @@ var usersState, usersIncome = 0, usersZip, stateData, adultHouse = 0, childHouse
 
 // states key:[ state,  name,  median,  icon,  snap,  wic, insecure,  hardship,  lunch, breakfast]
 
-$.getJSON( "/food-sources/javascripts/statesnokey.json", function( data ) {
-  states = data;
- });
-
-// $.getJSON( "javascripts/statesnokey.json", function( data ) {
+// $.getJSON( "/javascripts/statesnokey.json", function( data ) {
 //   states = data;
 //  });
+
+$.getJSON( "javascripts/statesnokey.json", function( data ) {
+  states = data;
+ });
 
 $(document).ready(function(){
   // Null out value if user clicks on input
@@ -152,11 +152,7 @@ $(document).ready(function(){
   });
 
   $('.alternativeSection').on("click touch", ".source-submit", function() {
-    var numSelected = $('.alternativeSection .selected').length;
-    $( ".alternativeSection .selected" ).each(function( index ) {
-      var thisSection = $(this).attr('data-section')
-      $('#'+thisSection).val('true');
-    });
+    $('#alternative').val($('.alternativeSection .alternative').val());
 
     $('.alternativeSection').slideUp();
     $('.results').slideDown();
@@ -169,6 +165,12 @@ $(document).ready(function(){
     $('#schoolbackpack').val($('.schoolbackpack').val());
     $('.services-frequency .question-body').slideUp();
     $('.services-frequency .answer-popup').slideDown();
+    $('.insecure-data').countTo({
+      from: 0,
+      to: stateData[6],
+      speed: 1000,
+      refreshInterval: 50,
+    });
     scrollUp();
   });
 
@@ -192,16 +194,23 @@ $(document).ready(function(){
 
   $('.snap-question').on("click touch", ".answer", function() {
     $('#snap').val($('input[data-input="snap"]').val());
+    $('.snap-budget').countTo({
+      from: 0,
+      to: stateData[11],
+      speed: 2000,
+      refreshInterval: 50,
+    });
     $( ".snap-question .person, .snap-answer .person" ).each(function( index ) {
       if ( index < stateData[4] ) {
         $(this).addClass('recipient');
       }
-      $(this).delay(20 * index).fadeIn();
+      $(this).fadeIn();
     });
   });
 
   $('.wic-question').on("click touch", ".answer", function() {
     $('.wic-question .answer-popup').slideDown();
+    $('.wic-question .question-body').slideUp();
     scrollUp();
     $( ".wic-question .person" ).each(function( index ) {
       if ( index < stateData[5] ) {
@@ -213,9 +222,16 @@ $(document).ready(function(){
   });
 
   $('.lunch-question').on("click touch", ".answer", function() {
+    $('.lunch-question .question-body').slideUp();
     $('.lunch-question .answer-popup').slideDown();
     scrollUp();
     $('#schoolmeals').val($(this).attr('data-input'));
+    $('.lunch-data').countTo({
+      from: 0,
+      to: stateData[8],
+      speed: 2000,
+      refreshInterval: 50,
+    });
   });
 
   // Results
@@ -302,17 +318,18 @@ $(document).ready(function(){
   };
 
   // SWITCH STATE
-   $(".state-select-wrapper").on('click touch', '.source-submit', function(){
+  $(".state-select-wrapper").on('click touch', '.source-submit', function(){
     var newState = $('#state-select').val();
     $('.userState').text(states[newState][1]);
     $('.snap-data').text(states[newState][4]);
     $('.wic-data').text(states[newState][5]);
     $('.insecure-data').text(states[newState][6]);
     $('.hardship-data').text(states[newState][7]);
-    $('.lunch-data').text(states[newState][8]);
+    $('.lunch-data').text(commaSeparateNumber(states[newState][8]));
     $('.breakfast-data').text(states[newState][9]);
     $('.stateMedian').text(commaSeparateNumber(states[newState][2]));
     $('.food-hardship').text(states[newState][7]);
+    resetChart( states[newState][4] );
     scrollUp();
   });
 
@@ -326,17 +343,18 @@ $(document).ready(function(){
       $('#container').css('display', 'block');
       $('.userState').text(stateData[1]);
       $('.userIncome').text(commaSeparateNumber(usersIncome));
+      $('.state-household').text(stateData[10]);
       $('.intro-answer').slideDown( );
       $('.snap-data').text(stateData[4]);
       $('.wic-data').text(stateData[5]);
       $('.insecure-data').text(stateData[6]);
       $('.hardship-data').text(stateData[7]);
-      $('.lunch-data').text(stateData[8]);
+      $('.lunch-data').text(commaSeparateNumber(stateData[8]));
       $('.breakfast-data').text(stateData[9]);
       if (stateData[2] > usersIncome) {
         $('.income-relative').text("BELOW");
       }
-      $('.stateMedian').append(commaSeparateNumber(stateData[2]));
+      $('.stateMedian').append(stateData[2]);
       $('.food-hardship').append(stateData[7]);
       $('.income-difference').countTo({
         from: 0,
@@ -427,6 +445,19 @@ function setPersonChart( chart, data ) {
       $(this).addClass('recipient');
     }
     $(this).fadeIn();
+  });
+}
+
+function resetChart( data ) {
+  $( ".snap-answer .person" ).each(function( index ) {
+    if ( $(this).hasClass('recipient') ) {
+      $(this).removeClass('recipient');
+    }
+    $(this).hide();
+    if ( index < data ) {
+      $(this).addClass('recipient');
+    }
+    $(this).delay(20 * index).fadeIn();
   });
 }
 
