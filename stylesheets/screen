@@ -164,19 +164,24 @@
 .intro-answer {
   margin-top: 4.5rem; }
 
+/* line 118, _intro.scss */
+.credits {
+  font-family: "Archivo Narrow", helvetica, arial, sans-serif;
+  font-size: .8rem; }
+
 @media only screen and (min-width: 48rem) {
-  /* line 119, _intro.scss */
+  /* line 124, _intro.scss */
   #intro {
     margin-top: 5.5rem; }
-    /* line 122, _intro.scss */
+    /* line 127, _intro.scss */
     #intro .intro {
       background-color: #f5f5f5;
       padding: 0 2rem 1.5rem; }
-    /* line 127, _intro.scss */
+    /* line 132, _intro.scss */
     #intro input {
       background-color: #fff; }
 
-  /* line 132, _intro.scss */
+  /* line 137, _intro.scss */
   .intro-answer {
     margin-top: 4.5rem; } }
 /* line 1, _questions.scss */
